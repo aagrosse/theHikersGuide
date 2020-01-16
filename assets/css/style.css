@@ -10,8 +10,68 @@ html, body {
     opacity: 100%;
 }
 
-.container {
+.sidepanel {
+    width: 200px;
+    height: 360px;
+    margin-top: 20px;
+    margin-left: 120px;
+    background-color: white;
+    float: left;
+    opacity: 50%;
+}
+
+#results {
     display: block;
+    margin-top: 20px;
+    margin-right: 170px;
+    /* background-color: white; */
+    float: right;
+}
+
+form {
+    width: 500px;
+    height: 50px;
+    margin-left: 125px;
+    margin-top: 300px;
+    /* float: center; */
+    opacity: 80%;
+    background-color: #90a4ae;
+}
+
+input {
+    float: left;
+}
+
+::placeholder {
+    text-align: center;
+    color: black;
+}
+
+button {
+    border-radius: 28px;
+    padding: 5px;
+    float: center;
+    background-color: grey;
+    width: 40px;
+    height: 40px;
+    margin-left: 235px;
+    margin-right: 370px;
+    margin-bottom: 1000px;
+}
+
+p {
+    color: white;
+    text-align: center;
+    font-size: 14pt;
+}
+
+/* Trail results */
+.close {
+    float: right;
+}
+
+.hide {
+    display: none;
 }
 
 /* Footer */
@@ -23,9 +83,8 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-  }
+}
 
 main {
     flex: 1 0 auto;
-  }
-      
+}
