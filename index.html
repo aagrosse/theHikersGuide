@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- External CSS -->
     <link rel="stylesheet" type="text/css" href="../theHikersGuide/assets/css/style.css">
+    <!-- Font Awesome Code -->
+    <script src="https://kit.fontawesome.com/5599b5ab1b.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
@@ -20,10 +22,17 @@
 </header>
 
 <main>
-
-    <div class="container">
+    <div class="sidepanel" class="hide"></div>
+    <a id="close" class="hide" class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">x</i></a>
+    <div class="container" id="results">
+        <!-- <div class="area" class="hide">
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search City" aria-label="Search"/>
+                <button id="search" style="font-size:30px" class="fas fa-search"><a href="#" style="color:grey"></a></button>
+            </form>
+        </div> -->
     <div class="row">
-        <div class="col s12 m3 13">
+        <div class="col s12 m3 13" class="hide">
           <div class="card">
             <div class="card-image">
               <img src=https://via.placeholder.com/200>
@@ -35,7 +44,7 @@
             </div>
           </div>
         </div>
-        <div class="col s12 m3 13">
+        <div class="col s12 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
                 <img src=https://via.placeholder.com/200>
@@ -47,7 +56,7 @@
               </div>
             </div>
           </div>
-          <div class="col s13 m3 13">
+          <div class="col s13 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
                 <img src=https://via.placeholder.com/200>
@@ -59,7 +68,7 @@
               </div>
             </div>
           </div>
-          <div class="col s13 m3 13">
+          <div class="col s13 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
                 <img src=https://via.placeholder.com/200>
@@ -73,7 +82,7 @@
           </div>
       </div>
       <div class="row">
-        <div class="col s12 m3 13">
+        <div class="col s12 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
                 <img src=https://via.placeholder.com/200>
@@ -85,7 +94,7 @@
               </div>
             </div>
           </div>
-        <div class="col s12 m3 13">
+        <div class="col s12 m3 13" class="hide">
           <div class="card">
             <div class="card-image">
               <img src=https://via.placeholder.com/200>
@@ -97,7 +106,7 @@
             </div>
           </div>
         </div>
-        <div class="col s12 m3 13">
+        <div class="col s12 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
                 <img src=https://via.placeholder.com/200>
@@ -109,7 +118,7 @@
               </div>
             </div>
           </div>
-          <div class="col s12 m3 13">
+          <div class="col s12 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
                 <img src=https://via.placeholder.com/200>
@@ -123,7 +132,7 @@
           </div>
       </div>
       <div class="row">
-        <div class="col s12 m3 13">
+        <div class="col s12 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
                 <img src=https://via.placeholder.com/200>
@@ -135,7 +144,7 @@
               </div>
             </div>
           </div>
-        <div class="col s12 m3 13">
+        <div class="col s12 m3 13" class="hide">
           <div class="card">
             <div class="card-image">
               <img src=https://via.placeholder.com/200>
@@ -147,7 +156,7 @@
             </div>
           </div>
         </div>
-        <div class="col s12 m3 13">
+        <div class="col s12 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
                 <img src=https://via.placeholder.com/200>
@@ -159,7 +168,7 @@
               </div>
             </div>
           </div>
-          <div class="col s12 m3 13">
+          <div class="col s12 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
                 <img src=https://via.placeholder.com/200>
@@ -173,7 +182,7 @@
           </div>
       </div>
       <div class="row">
-        <div class="col s12 m3 13">
+        <div class="col s12 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
                 <img src=https://via.placeholder.com/200>
@@ -185,7 +194,7 @@
               </div>
             </div>
           </div>
-        <div class="col s12 m3 13">
+        <div class="col s12 m3 13" class="hide">
           <div class="card">
             <div class="card-image">
               <img src=https://via.placeholder.com/200>
@@ -197,7 +206,7 @@
             </div>
           </div>
         </div>
-        <div class="col s12 m3 13">
+        <div class="col s12 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
                 <img src=https://via.placeholder.com/200>
@@ -209,7 +218,7 @@
               </div>
             </div>
           </div>
-          <div class="col s12 m3 13">
+          <div class="col s12 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
                 <img src=https://via.placeholder.com/200>
@@ -228,13 +237,12 @@
 
 <footer class="page-footer blue-grey lighten-1">
     <div class="footer-copyright">
-        <div class="container">
-            The Proud Rabbits 2020 © 
-        </div>
+        <div class="container">The Proud Rabbits 2020 ©</div>
     </div>
 </footer>
 
 <!-- JavaScript and JQuery Code -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
