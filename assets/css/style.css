@@ -88,3 +88,12 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+.card {
+    background-color: #0d6e2f;
+    border-radius: 10px;
+    height: 200px !important;
+    width: auto;
+    overflow: hidden;
+    }
+
