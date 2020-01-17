@@ -23,6 +23,7 @@ function getPosition(position) {
   console.log();
   latitude =  position.coords.latitude;
   longitude = position.coords.longitude;
+  
   console.log("this is latitude:",latitude);
   console.log("this is longitude",longitude);
 }
