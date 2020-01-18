@@ -11,11 +11,18 @@
     <link rel="stylesheet" type="text/css" href="../theHikersGuide/assets/css/style.css">
     <!-- Font Awesome Code -->
     <script src="https://kit.fontawesome.com/5599b5ab1b.js" crossorigin="anonymous"></script>
+<<<<<<< HEAD
     <!-- jQuery link -->
     <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"></script>
     <!-- JS file link -->
     <script defer src="script.js"></script>
+=======
+ 
+    <!--Let browser know website is optimized for mobile-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+>>>>>>> 310858f17babd11355d248d7952a80245824ef2d
 </head>
 <body>
 <header>
@@ -27,22 +34,43 @@
 </header>
 
 <main>
+    
+ 
+
+ <!-- Modal Structure -->
+ <div id="modal1" class="modal">
+     <div class="modal-content" style= "color:black">
+     <img id="float" src="https://www.fillmurray.com/200/300">
+       <h4 class="float">Trail Name</h4>
+       
+       <h6>Star Rating:</h6>
+       <h6>Location:</h6>
+       <h6>Length:</h6>
+       <h6>Elevation Change</h6>
+       <h6>Difficulty:</h6>
+       <h6>Summary:</h6>
+     </div>
+     <div class="modal-footer">
+       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+     </div>
+   </div>
+
     <div class="sidepanel" class="hide"></div>
-    <a id="close" class="hide" class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">x</i></a>
+    <a id="close" class="hide" class="btn-floating halfway-fab waves-effect waves-light blue-grey" ><i class="material-icons">x</i></a>
     <div class="container" id="results">
-        <!-- <div class="area" class="hide">
+        <div class="area" class="hide">
             <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search City" aria-label="Search"/>
                 <button id="search" style="font-size:30px" class="fas fa-search"><a href="#" style="color:grey"></a></button>
             </form>
-        </div> -->
+        </div>
     <div class="row">
         <div class="col s12 m3 13" class="hide">
           <div class="card">
             <div class="card-image">
-              <img id="image-0" src=https://via.placeholder.com/200>
+              <img id="image-0" class= "trailImage" src=https://via.placeholder.com/200>
               <span class="card-title-0  card-title">Card Title</span>
-              <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+              <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" onclick="$('#modal1').modal('open');"><i class="material-icons">+</i></a>
             </div>
             <div class="card-content">
               <p></p>
@@ -54,7 +82,7 @@
               <div class="card-image">
                 <img  id="image-1" class= "trailImage" src=https://via.placeholder.com/200>
                 <span class="card-title-1  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" onclick="$('#modal1').modal('open');"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -64,9 +92,9 @@
           <div class="col s13 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
-                <img  id="image-2" src=https://via.placeholder.com/200>
+                <img  id="image-2" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-2  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" onclick="$('#modal1').modal('open');"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -76,9 +104,9 @@
           <div class="col s13 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
-                <img  id="image-3" src=https://via.placeholder.com/200>
+                <img  id="image-3" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-3  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" onclick="$('#modal1').modal('open');"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -90,9 +118,9 @@
         <div class="col s12 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
-                <img  id="image-4" src=https://via.placeholder.com/200>
+                <img  id="image-4" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-4 card-title ">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"onclick="$('#modal1').modal('open');" ><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -102,9 +130,9 @@
         <div class="col s12 m3 13" class="hide">
           <div class="card">
             <div class="card-image">
-              <img  id="image-5" src=https://via.placeholder.com/200>
+              <img  id="image-5" class= "trailImage"  src=https://via.placeholder.com/200>
               <span class="card-title-5  card-title">Card Title</span>
-              <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+              <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"onclick="$('#modal1').modal('open');" ><i class="material-icons">+</i></a>
             </div>
             <div class="card-content">
               <p></p>
@@ -114,9 +142,9 @@
         <div class="col s12 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
-                <img  id="image-6" src=https://via.placeholder.com/200>
+                <img  id="image-6" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-6  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"onclick="$('#modal1').modal('open');" ><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -126,9 +154,9 @@
           <div class="col s12 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
-                <img  id="image-7" src=https://via.placeholder.com/200>
+                <img  id="image-7" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-7  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" onclick="$('#modal1').modal('open');"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -140,9 +168,9 @@
         <div class="col s12 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
-                <img  id="image-8" src=https://via.placeholder.com/200>
+                <img  id="image-8" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-8  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" onclick="$('#modal1').modal('open');"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -152,9 +180,9 @@
         <div class="col s12 m3 13" class="hide">
           <div class="card">
             <div class="card-image">
-              <img  id="image-9" src=https://via.placeholder.com/200>
+              <img  id="image-9" class= "trailImage"  src=https://via.placeholder.com/200>
               <span class="card-title-9  card-title">Card Title</span>
-              <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+              <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" onclick="$('#modal1').modal('open');"><i class="material-icons">+</i></a>
             </div>
             <div class="card-content">
               <p></p>
@@ -164,9 +192,9 @@
         <div class="col s12 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
-                <img  id="image-10" src=https://via.placeholder.com/200>
+                <img  id="image-10" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-10  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" onclick="$('#modal1').modal('open');"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -176,9 +204,9 @@
           <div class="col s12 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
-                <img  id="image-11" src=https://via.placeholder.com/200>
+                <img  id="image-11" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-11  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" onclick="$('#modal1').modal('open');"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -190,9 +218,9 @@
         <div class="col s12 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
-                <img  id="image-12" src=https://via.placeholder.com/200>
+                <img  id="image-12" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-12  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" onclick="$('#modal1').modal('open');"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -202,9 +230,9 @@
         <div class="col s12 m3 13" class="hide">
           <div class="card">
             <div class="card-image">
-              <img  id="image-13" src=https://via.placeholder.com/200>
+              <img  id="image-13" class= "trailImage"  src=https://via.placeholder.com/200>
               <span class="card-title-13  card-title">Card Title</span>
-              <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+              <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"onclick="$('#modal1').modal('open');"><i class="material-icons">+</i></a>
             </div>
             <div class="card-content">
               <p></p>
@@ -214,9 +242,9 @@
         <div class="col s12 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
-                <img  id="image-14" src=https://via.placeholder.com/200>
+                <img  id="image-14" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-14  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" onclick="$('#modal1').modal('open');"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -226,9 +254,9 @@
           <div class="col s12 m3 13" class="hide">
             <div class="card">
               <div class="card-image">
-                <img  id="image-15" src=https://via.placeholder.com/200>
+                <img  id="image-15" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-15 card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" onclick="$('#modal1').modal('open');"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -247,9 +275,7 @@
 </footer>
 
 <!-- JavaScript and JQuery Code -->
-<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="assets/javascript/script.js"></script>
 
