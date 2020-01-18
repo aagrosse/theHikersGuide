@@ -5,9 +5,19 @@ $(document).ready(function() {
 console.log("hello")
 
 
+var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + 
+    + "b9da2b7e40a98e59cb40534717905908";
 
 $('#modal1').modal();
 
+
+    // Remove elements with hide
+    document.getElementById().hidden = false;
+    document,getElementById("cardResults").hidden = true;
+    resultCard.classList.remove("hide");
+    searchBtn.classList.remove("hide");
+    // userEntry.s
+    
 
 
 function getTrails (lat, lon) {
