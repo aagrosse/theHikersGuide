@@ -2,17 +2,11 @@
 $(document).ready(function() {
 
 
-console.log("hello")
-
-
-
 $('#modal1').modal();
 
 
 $(".btn-floating").on("click", function() {
-  // trail = $(this).attr("trailData");
-  // localStorage.setItem("currentCity", city);
-  $('#modal1').modal('open');
+ $('#modal1').modal('open');
 });
 
 $("#search").on("click", function(){
