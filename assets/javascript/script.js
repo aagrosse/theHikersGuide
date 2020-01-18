@@ -15,6 +15,34 @@ $(".btn-floating").on("click", function() {
   $('#modal1').modal('open');
 });
 
+$("#search").on("click", function(){
+  //search button click event that starts all the fun
+  var cityName= $("#input").val();
+  geoCode (cityName);
+});
+
+
+
+function geoCode (city) {
+  var geoKey = "f51b969f42a69a";
+  var geoURL = "https://us1.locationiq.com/v1/search.php?key=" + geoKey +"&q=" + city + "&format=json";
+  $.ajax({
+    url: geoURL,
+    method: "GET"
+}).then(function(response) {
+    console.log(response);
+    lat = response[0].lat;
+    lon = response[0].lon;
+    getTrails (lat, lon);
+  });
+}
+
+
+
+geoCode("atlanta")
+
+
+
 
 
 function getTrails (lat, lon) {
@@ -23,7 +51,7 @@ function getTrails (lat, lon) {
     var res = 16;
     var trailQueryURL = "https://www.hikingproject.com/data/get-trails?lat=" + lat + "&lon=" + lon + "&maxDistance=" + dist + "&maxResults=" + res + "&key=" + trailKey;
  
-console.log(trailQueryURL)
+// console.log(trailQueryURL)
 
 $.ajax({
         url: trailQueryURL,
@@ -38,7 +66,7 @@ $.ajax({
         } 
 
       
-console.log(response.trails[0].name)
+// console.log(response.trails[0].name)
 
      });
 }
@@ -48,26 +76,6 @@ getTrails(33.763406, -84.395075);
 
 
 
-// check if the browser support the getlocation API
-function supportRequest() {
-  if (navigator.getLocation) {
-    navigator.geolocation.getCurrentPosition(getPosition);
-  }
-  else {
-    alert("Geolocation is not supported by this browser !");
-  }
-}
-navigator.geolocation.getCurrentPosition(getPosition);
-// getting current location from navigator API
-function getPosition(position) {
-  console.log("this is position:", position);
-  console.log("this is latitude:", position.coords.latitude);
-  console.log("this is longitude", position.coords.longitude);
-  latitude =  position.coords.latitude;
-  longitude = position.coords.longitude;
-  console.log("this is latitude:",latitude);
-  console.log("this is longitude",longitude);
-}
 
 
 
@@ -79,21 +87,6 @@ function getPosition(position) {
 
 
 
-//  Identify the variables needed to target
-// var resultCard = document.querySelector(".card");
-// var searchBtn = document.querySelector("#search");
-// // var userEntry = document.querySelector(input);
-
-
-// var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + 
-//     + "b9da2b7e40a98e59cb40534717905908";
-
-//     $("#search").on('click', function(){
-
-//     // Remove elements with hide
-//     resultCard.classList.remove("hide");
-//     searchBtn.classList.remove("hide");
-    
 
 
     
