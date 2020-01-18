@@ -1,8 +1,12 @@
+
+$(document).ready(function() {
+
+
 console.log("hello")
 
 
 
-
+$('#modal1').modal();
 
 
 
@@ -33,7 +37,40 @@ console.log(response.trails[0].name)
 }
 
 
-getTrails(39.9787, -105.2755);
+getTrails(33.763406, -84.395075);
+
+
+
+// check if the browser support the getlocation API
+function supportRequest() {
+  if (navigator.getLocation) {
+    navigator.geolocation.getCurrentPosition(getPosition);
+  }
+  else {
+    alert("Geolocation is not supported by this browser !");
+  }
+}
+navigator.geolocation.getCurrentPosition(getPosition);
+// getting current location from navigator API
+function getPosition(position) {
+  console.log("this is position:", position);
+  console.log("this is latitude:", position.coords.latitude);
+  console.log("this is longitude", position.coords.longitude);
+  latitude =  position.coords.latitude;
+  longitude = position.coords.longitude;
+  console.log("this is latitude:",latitude);
+  console.log("this is longitude",longitude);
+}
+
+
+
+
+
+
+
+
+
+
 
 //  Identify the variables needed to target
 // var resultCard = document.querySelector(".card");
@@ -55,6 +92,6 @@ getTrails(39.9787, -105.2755);
     
 
 
-    // });
+    });
 
     
