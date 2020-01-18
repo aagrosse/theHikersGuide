@@ -9,6 +9,13 @@ console.log("hello")
 $('#modal1').modal();
 
 
+$(".btn-floating").on("click", function() {
+  // trail = $(this).attr("trailData");
+  // localStorage.setItem("currentCity", city);
+  $('#modal1').modal('open');
+});
+
+
 
 function getTrails (lat, lon) {
     var trailKey = "200668995-d0d69e4094ff3a415bc5f83a7340a09a";
