@@ -97,3 +97,12 @@ main {
     overflow: hidden;
     }
 
+#float {
+    float:left;
+    padding:10px;
+}
+
+.trailImage{
+    height: 170px;
+    overflow:hidden;
+}
