@@ -47,12 +47,21 @@ input {
     color: black;
 }
 
-button {
+#search {
     border-radius: 28px;
     padding: 5px;
     float: center;
     background-color: grey;
     width: 40px;
+    height: 40px;
+    margin-left: 235px;
+    margin-right: 370px;
+    margin-bottom: 1000px;
+}
+
+#geolocation{
+    background-color: grey;
+    width: 100px;
     height: 40px;
     margin-left: 235px;
     margin-right: 370px;

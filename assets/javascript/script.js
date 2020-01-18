@@ -43,12 +43,12 @@ var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +
 
 
 
-    // Remove elements with hide
-    document.getElementById().hidden = false;
-    document,getElementById("cardResults").hidden = true;
-    resultCard.classList.remove("hide");
-    searchBtn.classList.remove("hide");
-    // userEntry.s
+    // // Remove elements with hide
+    // document.getElementById(".row").hidden = false;
+    // document,getElementById("cardResults").hidden = true;
+    // resultCard.classList.remove("hide");
+    // searchBtn.classList.remove("hide");
+    // // userEntry.s
     
 
 
