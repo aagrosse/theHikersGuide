@@ -15,7 +15,7 @@ html, body {
     height: 360px;
     margin-top: 20px;
     margin-left: 120px;
-    background-color: white;
+    background-color:gray;
     float: left;
     opacity: 50%;
 }
