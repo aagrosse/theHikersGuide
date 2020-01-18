@@ -11,23 +11,25 @@
     <link rel="stylesheet" type="text/css" href="../theHikersGuide/assets/css/style.css">
     <!-- Font Awesome Code -->
     <script src="https://kit.fontawesome.com/5599b5ab1b.js" crossorigin="anonymous"></script>
- 
-    <!--Let browser know website is optimized for mobile-->
- <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+    <!-- jQuery link -->
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <!-- JS file link -->
+    <script defer src="script.js"></script>
 </head>
 <body>
 <header>
     <nav>
         <div class="nav-wrapper blue-grey lighten-1">
           <a href="#" class="brand-logo center">theHikersGuide</a>
+          <span></span>
         </div>
       </nav>
 </header>
 
 <main>
     
- 
+  
 
  <!-- Modal Structure -->
  <div id="modal1" class="modal">
@@ -47,7 +49,15 @@
      </div>
    </div>
 
-    <div class="sidepanel" class="hide"></div>
+    <div class="sidepanel" class="hide">
+      <div class="card-body">
+        <h5 class="card-title" id="location"></h5>
+        <h6 class="card-title" id="locationName"></h6>
+        <p class="card-text" id="tempature"></p>
+        <p class="card-text" id="humidity"></p>
+        <p class="card-text" id="wind"></p>
+      </div>
+    </div>
     <a id="close" class="hide" class="btn-floating halfway-fab waves-effect waves-light blue-grey" ><i class="material-icons">x</i></a>
     <div class="container" id="results">
         <div class="area" class="hide">
