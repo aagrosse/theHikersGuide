@@ -17,7 +17,10 @@ html, body {
     margin-left: 120px;
     background-color:gray;
     float: left;
-    opacity: 50%;
+    opacity: 90%;
+    box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 1px rgba(0, 0, 0, 0.19);
+    padding: 15px;
+    border-radius: 10px;
 }
 
 #results {
@@ -71,7 +74,12 @@ input {
 p {
     color: white;
     text-align: center;
-    font-size: 14pt;
+    font-size: 12pt;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 /* Trail results */
@@ -104,6 +112,7 @@ main {
     height: 200px !important;
     width: auto;
     overflow: hidden;
+    box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 1px rgba(0, 0, 0, 0.19);
     }
 
 .float {
@@ -120,4 +129,17 @@ main {
     height: 300px;
     overflow: hidden;
     border-radius: 10px;
+}
+
+.card-text{
+    text-align: center;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#locationName, #icon {
+    text-align: center;
 }
