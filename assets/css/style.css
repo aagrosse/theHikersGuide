@@ -117,7 +117,7 @@ main {
 
 .float {
     float:left;
-
+    clear: left;
 }
 
 .trailImage{
@@ -148,4 +148,11 @@ main {
 
 #modal1 {
     background-image: url('../images/topography.png');
+}
+
+h5 {
+    
+    font-style: bold;
+    clear: right;
+    
 }
