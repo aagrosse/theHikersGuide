@@ -97,7 +97,7 @@ main {
     overflow: hidden;
     }
 
-#float {
+.float {
     float:left;
     padding:10px;
 }
@@ -105,4 +105,10 @@ main {
 .trailImage{
     height: 170px;
     overflow:hidden;
+}
+
+#tImage-0 {
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
 }

@@ -5,9 +5,11 @@ $(document).ready(function() {
 $('#modal1').modal();
 
 
-<<<<<<< HEAD
 $(".btn-floating").on("click", function() {
  $('#modal1').modal('open');
+ trailId = $(this).attr('d');
+ getModal (trailId);
+ console.log (trailId);
 });
 
 $("#search").on("click", function(){
@@ -34,21 +36,16 @@ function geoCode (city) {
 
 
 
-geoCode("atlanta")
 
-=======
-var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + 
-    + "b9da2b7e40a98e59cb40534717905908";
->>>>>>> 553de2ec7f8ecbf20d5138136e471fc410dc390b
 
 
 
     // Remove elements with hide
-    document.getElementById().hidden = false;
-    document,getElementById("cardResults").hidden = true;
-    resultCard.classList.remove("hide");
-    searchBtn.classList.remove("hide");
-    // userEntry.s
+    // document.getElementById().hidden = false;
+    // document,getElementById("cardResults").hidden = true;
+    // resultCard.classList.remove("hide");
+    // searchBtn.classList.remove("hide");
+    // // userEntry.s
     
 
 
@@ -69,6 +66,9 @@ $.ajax({
         for (var i = 0; i < 16; i++){
             $("#image-" + i).attr("src", response.trails[i].imgMedium)
             $(".card-title-" + i).text(response.trails[i].name)
+            var ident = (response.trails[i].id);
+            $("#btn-" + i).attr("d",ident);
+            console.log(ident)
 
         } 
 
@@ -79,7 +79,32 @@ $.ajax({
 }
 
 
-getTrails(33.763406, -84.395075);
+
+
+
+function getModal (trailId) {
+  var trailKey2 = "200668995-d0d69e4094ff3a415bc5f83a7340a09a";
+  var QueryURL = "https://www.hikingproject.com/data/get-trails-by-id?ids=" + trailId +"&key=" + trailKey2;
+
+// console.log(trailQueryURL)
+
+$.ajax({
+      url: QueryURL,
+      method: "GET"
+  }).then(function(response) {
+      console.log(response);
+      $("#tImage-0").attr("src", "");
+      $("#tImage-0").attr("src", response.trails[0].imgMedium);
+      $("#tName-0").text("Trail Name: " +(response.trails[0].name));
+      $("#tStar-0").text("Trail Star Rating: " + (response.trails[0].stars));
+      $("#tLocation-0").text("Trail Location: " + (response.trails[0].location));
+      $("#tLength-0").text("Trail Length (miles): " +(response.trails[0].length));
+      $("#tAscent-0").text("Trail Ascent (ft): " + (response.trails[0].ascent));
+      $("#tDescent-0").text("Trail Descent (ft): " + (response.trails[0].descent));
+      $("#tHigh-0").text("Trail High Point: " + (response.trails[0].high));
+      $("#tLow-0").text("Trail Low Point: " + (response.trails[0].low));
+      $("#tDifficulty-0").text("Trail Difficulty: " + (response.trails[0].difficulty));
+      $("#tSummary-0").text("Trail Summary: " + (response.trails[0].summary));
 
 
 
@@ -91,14 +116,19 @@ getTrails(33.763406, -84.395075);
 
 
 
-
-
-
-
-
-    
 
 
     });
+  }
+
+
+ 
 
     
+
+
+
+
+
+
+});
