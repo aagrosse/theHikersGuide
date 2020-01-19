@@ -13,8 +13,8 @@ html, body {
 .sidepanel {
     width: 200px;
     height: 360px;
-    margin-top: 20px;
-    margin-left: 120px;
+    margin-top: 50px;
+    margin-left: 100px;
     background-color:gray;
     float: left;
     opacity: 50%;
@@ -58,6 +58,14 @@ input {
     margin-right: 370px;
     margin-bottom: 1000px;
 }
+
+#geolocationBtn{
+    margin-bottom: 20px;
+    
+    
+}
+
+
 
 #geolocation{
     background-color: grey;

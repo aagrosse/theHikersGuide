@@ -1,14 +1,11 @@
 var latitude = 0;
 var longitude = 0;
 
-$("#geolocation").on("click",function(){
-  // alert("hello");
+$("#geolocationBtn").on("click",function(){
+  
+    
 
   
-
-  $("#sidepanel").attr("style","display:block");
-
-
   // check if the browser support the getlocation API
 function supportRequest() {
   if (navigator.getLocation) {
@@ -37,6 +34,7 @@ navigator.geolocation.getCurrentPosition(getPosition);
 
 
 function weather() {
+  $(".sidepanel").attr("style","display:block");
   console.log('weather function user location', latitude, longitude)
 
   var urlBase ="https://api.openweathermap.org/data/2.5/weather?appid=b650042e3a82aa70290734a60a8cb3e3&lat="+latitude+"&lon="+longitude+"&units=imperial";
