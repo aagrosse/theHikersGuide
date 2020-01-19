@@ -1,7 +1,8 @@
 
+
 $(document).ready(function() {
-
-
+  
+pageLoad()
 $('#modal1').modal();
 
 
@@ -36,17 +37,19 @@ function geoCode (city) {
 }
 
 
+function pageLoad() {
+     $(".hide").css("display", "none"); 
+}
 
 
 
 
-
-    // Remove elements with hide
+   // Remove elements with hide
     // document.getElementById().hidden = false;
-    // document,getElementById("cardResults").hidden = true;
+    // document.getElementById("cardResults").hidden = true;
     // resultCard.classList.remove("hide");
     // searchBtn.classList.remove("hide");
-    // // userEntry.s
+    // userEntry.s
     
 
 
