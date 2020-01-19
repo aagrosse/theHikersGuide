@@ -12,8 +12,9 @@ $(".btn-floating").on("click", function() {
  console.log (trailId);
 });
 
-$("#search").on("click", function(){
+$("#search").on("click", function(e){
   //search button click event that starts all the fun
+  e.preventDefault();
   var cityName= $("#input").val();
   geoCode (cityName);
 });
@@ -64,11 +65,15 @@ $.ajax({
         console.log(response);
 
         for (var i = 0; i < 16; i++){
-            $("#image-" + i).attr("src", response.trails[i].imgMedium)
+            // $("#image-" + i).attr("src", response.trails[i].imgMedium)
             $(".card-title-" + i).text(response.trails[i].name)
             var ident = (response.trails[i].id);
             $("#btn-" + i).attr("d",ident);
-            console.log(ident)
+            if ((response.trails[i].imgMedium) === ""){
+              $("#image-" + i).attr("src", "https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+            }else{
+              $("#image-" + i).attr("src", response.trails[i].imgMedium);
+            };
 
         } 
 
@@ -93,8 +98,8 @@ $.ajax({
       method: "GET"
   }).then(function(response) {
       console.log(response);
-      $("#tImage-0").attr("src", "");
-      $("#tImage-0").attr("src", response.trails[0].imgMedium);
+      // $("#tImage-0").attr("src", "");
+      // $("#tImage-0").attr("src", response.trails[0].imgMedium);
       $("#tName-0").text("Trail Name: " +(response.trails[0].name));
       $("#tStar-0").text("Trail Star Rating: " + (response.trails[0].stars));
       $("#tLocation-0").text("Trail Location: " + (response.trails[0].location));
@@ -105,8 +110,12 @@ $.ajax({
       $("#tLow-0").text("Trail Low Point: " + (response.trails[0].low));
       $("#tDifficulty-0").text("Trail Difficulty: " + (response.trails[0].difficulty));
       $("#tSummary-0").text("Trail Summary: " + (response.trails[0].summary));
-
-
+      if ((response.trails[0].imgMedium) === ""){
+        $("#tImage-0").attr("src", "https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+      }else{
+        $("#tImage-0").attr("src", response.trails[0].imgMedium);
+      };
+      console.log(response.trails[0].imgMedium)
 
 
 
