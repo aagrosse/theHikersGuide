@@ -1,10 +1,15 @@
 var latitude = 0;
 var longitude = 0;
 
+$("#geolocation").on("click",function(){
+  // alert("hello");
+
+  
+
+  $("#sidepanel").attr("style","display:block");
 
 
-
-// check if the browser support the getlocation API
+  // check if the browser support the getlocation API
 function supportRequest() {
   if (navigator.getLocation) {
     
@@ -53,16 +58,29 @@ function weather() {
          $("#humidity").html("Humidity: "+JSON.stringify(wetherInfo.main.humidity)+"%");
          $("#wind").html("Wind speed : "+JSON.stringify(wetherInfo.wind.speed)+" m/s");
 
-        // $(".uvIndex").html("UVIndex: ");
-
-       
+            
 
 
     }
 });
 
 
-}
+
+};
+
+
+
+
+
+
+});
+
+
+
+
+
+
+
 
 
 

@@ -5,7 +5,6 @@ $(document).ready(function() {
 $('#modal1').modal();
 
 
-<<<<<<< HEAD
 $(".btn-floating").on("click", function() {
  $('#modal1').modal('open');
 });
@@ -36,10 +35,6 @@ function geoCode (city) {
 
 geoCode("atlanta")
 
-=======
-var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + 
-    + "b9da2b7e40a98e59cb40534717905908";
->>>>>>> 553de2ec7f8ecbf20d5138136e471fc410dc390b
 
 
 
