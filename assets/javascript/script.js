@@ -37,8 +37,6 @@ $(document).ready(function() {
 
     // Remove elements with hide
     function pageLoad() {
-            // var hidden = document.querySelector(".row");
-            // hidden.classList.remove("hide")
             $(".row").hide();
         }
 

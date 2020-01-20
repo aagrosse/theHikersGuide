@@ -8,6 +8,7 @@ html, body {
 /* Navbar */
 .nav-wrapper {
     opacity: 100%;
+    position: absolute;
 }
 
 .sidepanel {
