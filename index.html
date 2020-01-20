@@ -20,9 +20,11 @@
 <body>
 <header>
     <nav>
+        <div class="navbar-fixed">
         <div class="nav-wrapper blue-grey lighten-1">
           <a href="#" class="brand-logo center">theHikersGuide</a>
           <span></span>
+        </div>
         </div>
       </nav>
 </header>
@@ -48,10 +50,6 @@
        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
      </div>
    </div>
-
-   <div>
-    <button type="button" class="btn btn-primary btn-lg" id="geolocationBtn">Use Current Location</button>
-   </div>
    
     <div class="sidepanel" class="hide" style="display: none;" >
       <div class="card-body">
@@ -65,10 +63,11 @@
     <a id="close" class="hide" class="btn-floating halfway-fab waves-effect waves-light blue-grey" ><i class="material-icons">x</i></a>
     <div class="container" id="results">
         <div class="area" class="hide">
-            <form class="form-inline">
-                <input id="input" class="form-control mr-sm-2" type="search" placeholder="Search City" aria-label="Search"/>
-                <button id="search" style="font-size:30px" class="fas fa-search"><a href="#" style="color:grey"></a></button>
-            </form>
+                <div class="container">
+                <input id="form" class="form-control mr-sm-2" type="search" placeholder="Search City" aria-label="Search"/>
+                <button id="search" style="font-size:30px" class="fas fa-search" style="color:grey"></button>
+                <button type="button" class="btn btn-primary btn-lg" id="geolocationBtn">Use Current Location</button>
+                </div>
           </div>
         
     <div class="row">
@@ -276,9 +275,9 @@
 
 </main>
 
-<footer class="page-footer blue-grey lighten-1">
+<footer class="page-footer blue-grey lighten-1" style="position:fixed;bottom:0;left:0;width:100%;">
     <div class="footer-copyright">
-        <div class="container">The Proud Rabbits 2020 ©</div>
+        <div class="container" class="white-text">The Proud Rabbits 2020 ©</div>
     </div>
 </footer>
 
