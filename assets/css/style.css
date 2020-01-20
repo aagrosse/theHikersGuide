@@ -8,6 +8,7 @@ html, body {
 /* Navbar */
 .nav-wrapper {
     opacity: 100%;
+    position: absolute;
 }
 
 .sidepanel {
@@ -31,18 +32,26 @@ html, body {
     float: right;
 }
 
-form {
+#form {
     width: 500px;
     height: 50px;
     margin-left: 125px;
     margin-top: 300px;
-    /* float: center; */
+    position: absolute;
+    float: right;
     opacity: 80%;
     background-color: #90a4ae;
 }
 
 input {
-    float: left;
+    /* margin-left: 235px; */
+    float: right;
+    position: absolute;
+}
+
+button {
+    margin-left: 550px;
+    margin-right: 5px;
 }
 
 ::placeholder {
@@ -51,24 +60,21 @@ input {
 }
 
 #search {
-    border-radius: 28px;
+    border-radius: 24px;
     padding: 5px;
-    float: center;
+    position: absolute;
+    float: right;
     background-color: grey;
-    width: 40px;
-    height: 40px;
-    margin-left: 235px;
+    width: 42px;
+    height: 42px;
+    margin-left: 800px;
     margin-right: 370px;
     margin-bottom: 1000px;
 }
 
 #geolocationBtn{
     margin-bottom: 20px;
-    
-    
 }
-
-
 
 #geolocation{
     background-color: grey;
@@ -91,11 +97,19 @@ p {
 }
 
 /* Trail results */
+#wrapper {
+    display: none;
+}
+
 .close {
     float: right;
 }
 
 .hide {
+    display: none;
+}
+
+.row {
     display: none;
 }
 
