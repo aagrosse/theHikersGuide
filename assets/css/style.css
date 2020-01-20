@@ -14,11 +14,12 @@ html, body {
 .sidepanel {
     width: 200px;
     height: 360px;
-    margin-top: 50px;
-    margin-left: 100px;
+    /* margin-top: 50px; */
+    /* margin-left: 100px; */
     background-color:gray;
     float: left;
     opacity: 50%;
+    text-align: center;
 }
 
 #results {
