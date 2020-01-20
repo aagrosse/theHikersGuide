@@ -2,7 +2,6 @@
 
 $(document).ready(function() {
   
-pageLoad()
 $('#modal1').modal();
 
 
@@ -37,9 +36,6 @@ function geoCode (city) {
 }
 
 
-function pageLoad() {
-     $(".hide").css("display", "none"); 
-}
 
 
 
