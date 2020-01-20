@@ -1,23 +1,22 @@
-
 $(document).ready(function() {
     pageLoad()
 
-    $('#modal1').modal();
+
+$('#modal1').modal();
     
     
-    $(".btn-floating").on("click", function() {
-     $('#modal1').modal('open');
-    });
+$(".btn-floating").on("click", function() {
+ $('#modal1').modal('open');
+});
     
-    $("#search").on("click", function(){
-      //search button click event that starts all the fun
-      var cityName= $("#input").val();
-      geoCode (cityName);
-    });
+$("#search").on("click", function(){
+  //search button click event that starts all the fun
+  var cityName= $("#input").val();
+  geoCode (cityName);
+});
 
-
-
-    function geoCode (city) {
+  
+function geoCode (city) {
         var geoKey = "f51b969f42a69a";
         var geoURL = "https://us1.locationiq.com/v1/search.php?key=" + geoKey +"&q=" + city + "&format=json";
         $.ajax({
@@ -31,21 +30,19 @@ $(document).ready(function() {
         });
       }
 
+geoCode("atlanta")
 
-
-      geoCode("atlanta")
-
-    // Remove elements with hide
+// Remove elements with hide
     function pageLoad() {
             $(".row").hide();
         }
 
-    // This code will show the results once the user inputs a city
+// This code will show the results once the user inputs a city
     // function showResults() {
 
     // }
-
-    function getTrails (lat, lon) {
+    
+function getTrails (lat, lon) {
         var trailKey = "200668995-d0d69e4094ff3a415bc5f83a7340a09a";
         var dist = 10;
         var res = 16;
@@ -58,15 +55,15 @@ $(document).ready(function() {
             method: "GET"
         }).then(function(response) {
             console.log(response);
-    
-            for (var i = 0; i < 16; i++){
+
+        for (var i = 0; i < 16; i++){
                 $("#image-" + i).attr("src", response.trails[i].imgMedium)
                 $(".card-title-" + i).text(response.trails[i].name)
     
             } 
-    
-          
-    // console.log(response.trails[0].name)
+
+      
+ // console.log(response.trails[0].name)
     
          });
     }
@@ -82,15 +79,7 @@ $(document).ready(function() {
     
     
     
-    
-    
-    
-    
-    
-    
-    
         
     
     
         });
-    

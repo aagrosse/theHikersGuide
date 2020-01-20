@@ -1,10 +1,12 @@
 var latitude = 0;
 var longitude = 0;
 
+$("#geolocationBtn").on("click",function(){
+  
+    
 
-
-
-// check if the browser support the getlocation API
+  
+  // check if the browser support the getlocation API
 function supportRequest() {
   if (navigator.getLocation) {
     
@@ -32,6 +34,7 @@ navigator.geolocation.getCurrentPosition(getPosition);
 
 
 function weather() {
+  $(".sidepanel").attr("style","display:block");
   console.log('weather function user location', latitude, longitude)
 
   var urlBase ="https://api.openweathermap.org/data/2.5/weather?appid=b650042e3a82aa70290734a60a8cb3e3&lat="+latitude+"&lon="+longitude+"&units=imperial";
@@ -53,16 +56,29 @@ function weather() {
          $("#humidity").html("Humidity: "+JSON.stringify(wetherInfo.main.humidity)+"%");
          $("#wind").html("Wind speed : "+JSON.stringify(wetherInfo.wind.speed)+" m/s");
 
-        // $(".uvIndex").html("UVIndex: ");
-
-       
+            
 
 
     }
 });
 
 
-}
+
+};
+
+
+
+
+
+
+});
+
+
+
+
+
+
+
 
 
 
