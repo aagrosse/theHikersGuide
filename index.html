@@ -11,11 +11,7 @@
     <link rel="stylesheet" type="text/css" href="../theHikersGuide/assets/css/style.css">
     <!-- Font Awesome Code -->
     <script src="https://kit.fontawesome.com/5599b5ab1b.js" crossorigin="anonymous"></script>
-    <!-- jQuery link -->
-    <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"></script>
-    <!-- JS file link -->
-    <script defer src="script.js"></script>
+   
 </head>
 <body>
 <header>
@@ -36,15 +32,21 @@
  <!-- Modal Structure -->
  <div id="modal1" class="modal">
      <div class="modal-content" style= "color:black">
-     <img id="float" src="https://www.fillmurray.com/200/300">
-       <h4 class="float">Trail Name</h4>
+     <img id="tImage-0" class="float" src="https://www.fillmurray.com/200/300">
        
-       <h6>Star Rating:</h6>
-       <h6>Location:</h6>
-       <h6>Length:</h6>
-       <h6>Elevation Change</h6>
-       <h6>Difficulty:</h6>
-       <h6>Summary:</h6>
+     
+     
+     <h5 id="tName-0">Trail Name</h5>
+      
+       
+       <h6 id="tLocation-0" >Location:</h6>
+       <h6 id="tStar-0" >Star Rating:</h6>
+       <h6 id="tLength-0" >Length:</h6>
+       <h6 id="tAscent-0" >Ascent:</h6>
+       <h6 id="tDescent-0" >Decent:</h6>
+       <h6 id="tDifficulty-0" >Difficulty:</h6>
+       <h6 id="tSummary-0" >Summary:</h6>
+      
      </div>
      <div class="modal-footer">
        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
@@ -53,11 +55,12 @@
    
     <div class="sidepanel" class="hide" style="display: none;" >
       <div class="card-body">
-        <h5 class="card-title" id="location"></h5>
+        <h5 class="card-title" id="icon"></h5>
         <h6 class="card-title" id="locationName"></h6>
         <p class="card-text" id="tempature"></p>
         <p class="card-text" id="humidity"></p>
         <p class="card-text" id="wind"></p>
+        <p class="card-text" id="uvIndex"></p>
       </div>
     </div>
     <a id="close" class="hide" class="btn-floating halfway-fab waves-effect waves-light blue-grey" ><i class="material-icons">x</i></a>
@@ -76,7 +79,7 @@
             <div class="card-image">
               <img id="image-0" class= "trailImage" src=https://via.placeholder.com/200>
               <span class="card-title-0  card-title">Card Title</span>
-              <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+              <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" id= "btn-0" d= "7004449"><i class="material-icons">+</i></a>
             </div>
             <div class="card-content">
               <p></p>
@@ -88,7 +91,7 @@
               <div class="card-image">
                 <img  id="image-1" class= "trailImage" src=https://via.placeholder.com/200>
                 <span class="card-title-1  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" ><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" id= "btn-1"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -100,7 +103,7 @@
               <div class="card-image">
                 <img  id="image-2" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-2  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" ><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" id= "btn-2"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -112,7 +115,7 @@
               <div class="card-image">
                 <img  id="image-3" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-3  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"id= "btn-3"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -126,7 +129,7 @@
               <div class="card-image">
                 <img  id="image-4" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-4 card-title ">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" id= "btn-4" ><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -138,7 +141,7 @@
             <div class="card-image">
               <img  id="image-5" class= "trailImage"  src=https://via.placeholder.com/200>
               <span class="card-title-5  card-title">Card Title</span>
-              <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" ><i class="material-icons">+</i></a>
+              <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" id= "btn-5"><i class="material-icons">+</i></a>
             </div>
             <div class="card-content">
               <p></p>
@@ -150,7 +153,7 @@
               <div class="card-image">
                 <img  id="image-6" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-6  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" ><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" id= "btn-6"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -162,7 +165,7 @@
               <div class="card-image">
                 <img  id="image-7" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-7  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" id= "btn-7"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -176,7 +179,7 @@
               <div class="card-image">
                 <img  id="image-8" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-8  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" id= "btn-8"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -188,7 +191,7 @@
             <div class="card-image">
               <img  id="image-9" class= "trailImage"  src=https://via.placeholder.com/200>
               <span class="card-title-9  card-title">Card Title</span>
-              <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" ><i class="material-icons">+</i></a>
+              <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" id= "btn-9"><i class="material-icons">+</i></a>
             </div>
             <div class="card-content">
               <p></p>
@@ -200,7 +203,7 @@
               <div class="card-image">
                 <img  id="image-10" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-10  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" id= "btn-10"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -212,7 +215,7 @@
               <div class="card-image">
                 <img  id="image-11" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-11  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" ><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" id= "btn-11"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -226,7 +229,7 @@
               <div class="card-image">
                 <img  id="image-12" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-12  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" ><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" id= "btn-12"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -238,7 +241,7 @@
             <div class="card-image">
               <img  id="image-13" class= "trailImage"  src=https://via.placeholder.com/200>
               <span class="card-title-13  card-title">Card Title</span>
-              <a class="btn-floating halfway-fab waves-effect waves-light blue-grey"><i class="material-icons">+</i></a>
+              <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" id= "btn-13" ><i class="material-icons">+</i></a>
             </div>
             <div class="card-content">
               <p></p>
@@ -250,7 +253,7 @@
               <div class="card-image">
                 <img  id="image-14" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-14  card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" ><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" id= "btn-14"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -262,7 +265,7 @@
               <div class="card-image">
                 <img  id="image-15" class= "trailImage"  src=https://via.placeholder.com/200>
                 <span class="card-title-15 card-title">Card Title</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" ><i class="material-icons">+</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue-grey" id= "btn-15"><i class="material-icons">+</i></a>
               </div>
               <div class="card-content">
                 <p></p>
@@ -282,6 +285,7 @@
 </footer>
 
 <!-- JavaScript and JQuery Code -->
+<script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="assets/javascript/script.js"></script>
