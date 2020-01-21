@@ -91,7 +91,6 @@ function getTrails (lat, lon) {
             console.log(response);
 
         for (var i = 0; i < 16; i++){
-            // $("#image-" + i).attr("src", response.trails[i].imgMedium)
             $(".card-title-" + i).text(response.trails[i].name)
             var ident = (response.trails[i].id);
             $("#btn-" + i).attr("d",ident);
@@ -127,12 +126,26 @@ $.ajax({
       $("#tDescent-0").text("Trail Descent (ft): " + (response.trails[0].descent));
       $("#tHigh-0").text("Trail High Point: " + (response.trails[0].high));
       $("#tLow-0").text("Trail Low Point: " + (response.trails[0].low));
-      $("#tDifficulty-0").text("Trail Difficulty: " + (response.trails[0].difficulty));
+      
+      if ((response.trails[0].difficulty) === "green"){
+        $("#tDifficulty-0").text("Trail Difficulty: Easy");
+      }else if((response.trails[0].difficulty) === "greenBlue"){
+        $("#tDifficulty-0").text("Trail Difficulty: Easy / Intermediate");
+      }else if((response.trails[0].difficulty) === "blue"){
+        $("#tDifficulty-0").text("Trail Difficulty: Intermediate");
+      }else if((response.trails[0].difficulty) === "blueBlack"){
+        $("#tDifficulty-0").text("Trail Difficulty: Intermediate / Difficult");
+      }else {
+        $("#tDifficulty-0").text("Trail Difficulty: Difficult");};
+      console.log(response.trails[0].difficulty); 
+
       $("#tSummary-0").text("Trail Summary: " + (response.trails[0].summary));
+     console.log(_.map(response, "trails[0].name"));
       if ((response.trails[0].imgMedium) === ""){
         $("#tImage-0").attr("src", "https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
       }else{
         $("#tImage-0").attr("src", response.trails[0].imgMedium);
+
       };
       
     });

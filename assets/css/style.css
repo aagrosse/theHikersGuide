@@ -98,7 +98,7 @@ p {
 
 /* Trail results */
 #wrapper {
-    display: none;
+    /* display: none; */
 }
 
 .close {
@@ -106,11 +106,11 @@ p {
 }
 
 .hide {
-    display: none;
+    /* display: none; */
 }
 
 .row {
-    display: none;
+    /* display: none; */
 }
 
 /* Footer */
