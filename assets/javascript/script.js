@@ -15,11 +15,35 @@ $(".btn-floating").on("click", function() {
 $("#search").on("click", function(e){
   //search button click event that starts all the fun
   e.preventDefault();
-  var cityName= $("#input").val();
+  var cityName= $("#form").val();
   geoCode (cityName);
-});
+  getWeather(cityName);
+  console.log(cityName);
+  });
 
+  $("#geolocationBtn").on("click",function(){
+    // check if the browser support the getlocation API
+    function supportRequest() {
+      if (navigator.getLocation) {
+        navigator.geolocation.getCurrentPosition(getPosition);
+      }else {
+        alert("Geolocation is not supported by this browser !");
+      }
+    }
+    function getPosition(success){
+      lat =  success.coords.latitude;
+      lon = success.coords.longitude;
+     
+    // call weather function to have access the lat & lan variable inside the weather function
+    weather(lat,lon);
+    getTrails (lat, lon);
+    }
+    navigator.geolocation.getCurrentPosition(getPosition);
+    });
   
+  
+
+
 function geoCode (city) {
         var geoKey = "f51b969f42a69a";
         var geoURL = "https://us1.locationiq.com/v1/search.php?key=" + geoKey +"&q=" + city + "&format=json";
@@ -31,6 +55,8 @@ function geoCode (city) {
           lat = response[0].lat;
           lon = response[0].lon;
           getTrails (lat, lon);
+          getUV (lat, lon);
+          console.log("hello")
         });
       }
 
@@ -76,15 +102,8 @@ function getTrails (lat, lon) {
             };
 
         } 
-
-      
-// console.log(response.trails[0].name)
-
      });
 }
-
-
-
 
 
 function getModal (trailId) {
@@ -115,60 +134,15 @@ $.ajax({
       }else{
         $("#tImage-0").attr("src", response.trails[0].imgMedium);
       };
-      console.log(response.trails[0].imgMedium)
-
-
-
-
-
-
-
-
-
-
-
+      
     });
   }
-  var latitude = 0;
-  var longitude = 0;
-  
-  $("#geolocationBtn").on("click",function(){
-    
-      
-  
-    
-    // check if the browser support the getlocation API
-  function supportRequest() {
-    if (navigator.getLocation) {
-      
-      navigator.geolocation.getCurrentPosition(getPosition);
-    }else {
-      alert("Geolocation is not supported by this browser !");
-    }
-  }
-  
-  function getPosition(success){
-    console.log(' getposition function')
-  
-    latitude =  success.coords.latitude;
-    longitude = success.coords.longitude;
-    console.log('right after update', latitude, longitude)
-    
-    console.log(success);
-  
-  weather()
-  getTrails (latitude, longitude)
-  
-  }
-  navigator.geolocation.getCurrentPosition(getPosition);
   
   
-  
-  function weather() {
+  function weather(lat, lon) {
     $(".sidepanel").attr("style","display:block");
-    console.log('weather function user location', latitude, longitude)
-  
-    var urlBase ="https://api.openweathermap.org/data/2.5/weather?appid=b650042e3a82aa70290734a60a8cb3e3&lat="+latitude+"&lon="+longitude+"&units=imperial";
+    $("#sidepanel").delay(800).fadeIn();
+    var urlBase ="https://api.openweathermap.org/data/2.5/weather?appid=b650042e3a82aa70290734a60a8cb3e3&lat="+lat+"&lon="+lon+"&units=imperial";
                   
      
   
@@ -183,47 +157,81 @@ $.ajax({
   
            $("#location").html("Location:")
            $("#locationName").html(wetherInfo.name +  `<img src='http://openweathermap.org/img/w/${wetherInfo.weather[0].icon}.png'>`);
-           $("#tempature").html("Tempature: "+ wetherInfo.main.temp+" &#8457");
+           $("#tempature").html("Tempature: "+Math.floor(wetherInfo.main.temp)+" &#8457");
            $("#humidity").html("Humidity: "+JSON.stringify(wetherInfo.main.humidity)+"%");
            $("#wind").html("Wind speed : "+JSON.stringify(wetherInfo.wind.speed)+" m/s");
-           getUV (latitude, longitude)
+           
               
-  
-  
       }
-  });
-  
-  function getUV (lat, lon) {
-    // an API call to get UV data an post data to the DOM
-  var key = "3111507f84c92e1af42924418f205282";
-  var uvQuery = "https://api.openweathermap.org/data/2.5/uvi?appid=" + key + "&lat=" + lat + "&lon=" + lon;
-  
-  
-    $.ajax({
-        url: uvQuery,
-        method: "GET"
-      }).then(function(response) {
-        $("#uvIndex").text("UV Index: " + (response.value));
-        var uv = response.value;
-        if (uv < 3) { 
-            $("#uvIndex").removeClass()
-            $("#uvIndex").addClass("new badge green")
-          } else if (uv < 7) { 
-            $("#uvIndex").removeClass()
-            $("#uvIndex").addClass("new badge yellow")
-          } else if (uv < 11) { 
-            $("#uvIndex").removeClass()
-            $("#uvIndex").addClass("new badge red")
-          }
-      });
-    }   
-  
-  
-  }
-  
+     
+    });
+    }
 
-});
-  
-  
+   function getWeather(city){
+      var urlBaseCityName = "http://api.openweathermap.org/data/2.5/weather?appid=b650042e3a82aa70290734a60a8cb3e3&q="+city+"&units=imperial";
+      console.log("success link00",urlBaseCityName);
+      $(".sidepanel").attr("style","display:block");
+      $("#sidepanel").delay(800).fadeIn();
+      $.ajax({
+        url:urlBaseCityName,
+        type:"GET",
+        success:function(cityWeatherInfo){
+    
+             $("#location").html("Location:")
+             $("#locationName").html(cityWeatherInfo.name +  `<img src='http://openweathermap.org/img/w/${cityWeatherInfo.weather[0].icon}.png'>`);
+             $("#tempature").html("Tempature: "+Math.floor(cityWeatherInfo.main.temp)+" &#8457");
+             $("#humidity").html("Humidity: "+JSON.stringify(cityWeatherInfo.main.humidity)+"%");
+             $("#wind").html("Wind speed : "+JSON.stringify(cityWeatherInfo.wind.speed)+" m/s");
+        }
+        });
+            }
+    
 
-});  
+            function getUV (lat, lon) {
+              // an API call to get UV data an post data to the DOM
+            var key = "b650042e3a82aa70290734a60a8cb3e3";
+            var uvQuery = "https://api.openweathermap.org/data/2.5/uvi/forecast?appid=" + key + "&lat=" + lat + "&lon=" + lon;
+            console.log(uvQuery)
+            console.log(lat,lon)
+            
+              $.ajax({
+                  url: uvQuery,
+                  method: "GET"
+                }).then(function(response) {
+                  $("#uvIndex").text("UV Index: " + (response[0].value));
+                  var uv = response[0].value;
+                  if (uv < 3) { 
+                      $("#uvIndex").removeClass()
+                      $("#uvIndex").addClass("new badge green")
+                    } else if (uv < 7) { 
+                      $("#uvIndex").removeClass()
+                      $("#uvIndex").addClass("new badge yellow")
+                    } else if (uv < 11) { 
+                      $("#uvIndex").removeClass()
+                      $("#uvIndex").addClass("new badge red")
+                    }
+                });
+              } 
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+          });  
+     
