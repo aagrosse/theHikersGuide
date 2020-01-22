@@ -1,9 +1,34 @@
+* {
+    margin: 0; padding: 0;
+  }
+  
+  #container {
+    overflow: hidden;
+    position: relative;
+    
+  }
+  
+  video {
+    position: fixed;
+    /* Vertical and Horizontal center*/
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    background-size: cover;
+    min-width: 100%;
+    min-height: 100%;   
+    width: auto;
+    height: auto;
+  }
+
 /* Background Image */
-html, body {
+.body {
     background-image: url(../images/woodendeckgrassmountain.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    
+    
 }
 /* Navbar */
 .nav-wrapper {
@@ -22,6 +47,7 @@ html, body {
     box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 1px rgba(0, 0, 0, 0.19);
     padding: 15px;
     border-radius: 10px;
+    
 }
 
 #results {
@@ -32,15 +58,24 @@ html, body {
     float: right;
 }
 
+.contain{
+    display:block;
+    text-align: center;
+}
+
+
+
+
 #form {
     width: 500px;
     height: 50px;
     margin-left: 125px;
     margin-top: 300px;
     position: absolute;
-    float: right;
-    opacity: 80%;
+    display: inline-block;
+    opacity: 70%;
     background-color: #90a4ae;
+    border-radius: 10px;
 }
 
 input {
@@ -98,7 +133,7 @@ p {
 
 /* Trail results */
 #wrapper {
-    /* display: none; */
+    display: block;
 }
 
 .close {
@@ -106,11 +141,11 @@ p {
 }
 
 .hide {
-    /* display: none; */
+    display: block;
 }
 
 .row {
-    /* display: none; */
+    display: none;
 }
 
 /* Footer */
@@ -177,4 +212,8 @@ h5 {
     font-style: bold;
     clear: right;
     
+}
+
+footer{
+    opacity: 70%;
 }
