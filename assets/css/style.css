@@ -33,26 +33,27 @@ html, body {
 }
 
 #form {
-    width: 500px;
-    height: 50px;
-    margin-left: 125px;
-    margin-top: 300px;
-    position: absolute;
-    float: right;
+    margin-right: 10px;
+    /* width: 500px;
+    height: 50px; */
+    /* margin-left: 125px;
+    margin-top: 300px; */
+    /* position: absolute;
+    float: right; */
     opacity: 80%;
     background-color: #90a4ae;
 }
 
 input {
     /* margin-left: 235px; */
-    float: right;
-    position: absolute;
+    /* float: right;
+    position: absolute; */
 }
 
-button {
+/* button {
     margin-left: 550px;
     margin-right: 5px;
-}
+} */
 
 ::placeholder {
     text-align: center;
@@ -62,21 +63,32 @@ button {
 #search {
     border-radius: 24px;
     padding: 5px;
-    position: absolute;
+    /* position: absolute; */
     float: right;
     background-color: grey;
     width: 42px;
     height: 42px;
-    margin-left: 800px;
-    margin-right: 370px;
-    margin-bottom: 1000px;
+    /* margin-left: 800px; */
+    margin-left: 5px;
+    margin-right: 10px;
+    /* margin-bottom: 1000px; */
+}
+
+#userEntry {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    width: 100vh;
 }
 
 #geolocationBtn{
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+    width: 50%;
+    font-size: small;
 }
 
-#geolocation{
+#geolocation {
     background-color: grey;
     width: 100px;
     height: 40px;
@@ -103,6 +115,7 @@ p {
 
 .close {
     float: right;
+    display: contents;
 }
 
 .hide {
@@ -111,6 +124,12 @@ p {
 
 .row {
     display: none;
+}
+
+#restart {
+    position: absolute;
+    top: 1;
+    right: 0;
 }
 
 /* Footer */
@@ -177,4 +196,8 @@ h5 {
     font-style: bold;
     clear: right;
     
+}
+
+footer {
+    margin-top: 20px;
 }

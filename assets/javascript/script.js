@@ -68,9 +68,11 @@ function geoCode (city) {
 
 // This code will show the results once the user inputs a city
     // function showResults() {
+        // let $("#close").hidden = false;
+// }
 
    // Remove elements with hide
-    // document.getElementById().hidden = false;
+    // 
     // document.getElementById("cardResults").hidden = true;
     // resultCard.classList.remove("hide");
     // searchBtn.classList.remove("hide");
@@ -188,7 +190,7 @@ $.ajax({
     
 
             function getUV (lat, lon) {
-              // an API call to get UV data an post data to the DOM
+              // API call to get UV data and post data to the DOM
             var key = "b650042e3a82aa70290734a60a8cb3e3";
             var uvQuery = "https://api.openweathermap.org/data/2.5/uvi/forecast?appid=" + key + "&lat=" + lat + "&lon=" + lon;
             console.log(uvQuery)
