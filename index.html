@@ -14,6 +14,9 @@
    
 </head>
 <body>
+  <video autoplay muted loop id="hidevid">
+    <source src="assets/videos/170216A_063_HikingThroughForest_1080p.mp4" type="video/mp4">
+    </video>
 <header>
     <nav>
         <div class="navbar-fixed">
@@ -25,10 +28,11 @@
       </nav>
 </header>
 
-<main>
-    
-  
 
+<main>
+  <div id="container">
+    </div>
+  
  <!-- Modal Structure -->
  <div id="modal1" class="modal">
      <div class="modal-content" style= "color:black">
@@ -52,10 +56,11 @@
        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
      </div>
    </div>
-   
+ 
+  
     <div class="sidepanel" class="hide" style="display: none;" >
       <div class="card-body">
-        <h5 class="card-title" id="icon"></h5>
+        <a class="card-title" id="icon"></a>
         <h6 class="card-title" id="locationName"></h6>
         <p class="card-text" id="tempature"></p>
         <p class="card-text" id="humidity"></p>
@@ -236,6 +241,7 @@
               </div>
             </div>
           </div>
+         
         <div class="col s12 m3 13" class="hide">
           <div class="card">
             <div class="card-image">
@@ -275,7 +281,7 @@
       </div>
     </div>
     </div>
-
+  
 </main>
 
 <div id="space"></div>
@@ -284,7 +290,8 @@
         <div class="container" class="white-text">The Proud Rabbits 2020 ©</div>
     </div>
 </footer>
-
+</video>
+</div>
 <!-- JavaScript and JQuery Code -->
 <script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
