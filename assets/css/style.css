@@ -4,8 +4,7 @@
   
   #container {
     overflow: hidden;
-    position: relative;
-    
+    position: relative; 
   }
   
   video {
@@ -26,10 +25,9 @@
     background-image: url(../images/woodendeckgrassmountain.jpg);
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    
-    
+    background-attachment: fixed;    
 }
+
 /* Navbar */
 .nav-wrapper {
     opacity: 100%;
@@ -47,7 +45,6 @@
     box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 1px rgba(0, 0, 0, 0.19);
     padding: 15px;
     border-radius: 10px;
-    
 }
 
 #results {
@@ -58,13 +55,10 @@
     float: right;
 }
 
-.contain{
+.contain {
     display:block;
     text-align: center;
 }
-
-
-
 
 #form {
     margin-right: 10px;
@@ -141,6 +135,11 @@ p {
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
+}
+
+/* Warning Message */
+#modal2 {
+    display: none;
 }
 
 /* Trail results */
