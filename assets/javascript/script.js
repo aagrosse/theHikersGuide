@@ -211,7 +211,8 @@ $.ajax({
         console.log(wetherInfo);
   
            $("#location").html("Location:")
-           $("#locationName").html(wetherInfo.name +  `<img src='http://openweathermap.org/img/w/${wetherInfo.weather[0].icon}.png'>`);
+           $("#icon").html(`<img src='http://openweathermap.org/img/w/${wetherInfo.weather[0].icon}.png'>`);
+           $("#locationName").html(wetherInfo.name);
            $("#tempature").html("Tempature: "+Math.floor(wetherInfo.main.temp)+" &#8457");
            $("#humidity").html("Humidity: "+JSON.stringify(wetherInfo.main.humidity)+"%");
            $("#wind").html("Wind speed : "+JSON.stringify(wetherInfo.wind.speed)+" m/s");
@@ -232,8 +233,9 @@ $.ajax({
         type:"GET",
         success:function(cityWeatherInfo){
     
-             $("#location").html("Location:")
-             $("#locationName").html(cityWeatherInfo.name +  `<img src='http://openweathermap.org/img/w/${cityWeatherInfo.weather[0].icon}.png'>`);
+             $("#location").html("Location:");
+             $("#icon").html(`<img src='http://openweathermap.org/img/w/${cityWeatherInfo.weather[0].icon}.png'>`);
+             $("#locationName").html(cityWeatherInfo.name);
              $("#tempature").html("Tempature: "+Math.floor(cityWeatherInfo.main.temp)+" &#8457");
              $("#humidity").html("Humidity: "+JSON.stringify(cityWeatherInfo.main.humidity)+"%");
              $("#wind").html("Wind speed : "+JSON.stringify(cityWeatherInfo.wind.speed)+" m/s");
@@ -299,4 +301,20 @@ $.ajax({
 
       
           });  
+
+            // restart the page for another search
+
+           $("#restart").on("click", function () {
+
+            $('#hidevid').show();
+            $('#form').show();
+            $(".row").attr("style", "display:none");
+            
+
+
+
+
+
+           })
+
      
