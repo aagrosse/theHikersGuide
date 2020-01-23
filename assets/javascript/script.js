@@ -338,6 +338,7 @@ $.ajax({
             $('#hidevid').show();
             $('#form').show();
             $(".row").attr("style", "display:none");
+            
 
 
 
