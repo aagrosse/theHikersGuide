@@ -163,6 +163,7 @@ p {
 }
 
 #restart {
+    display: none;
     position: absolute;
     top: 1;
     right: 0;
