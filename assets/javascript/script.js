@@ -1,21 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $(document).ready(function() {
   
 $('#modal1').modal();
@@ -45,7 +27,7 @@ $("#search").on("click", function(e){
   $("body").addClass("body");
   $("#restart").attr("style","display:block");
   } else {
-    $('#modal2').modal('open');
+  $('#modal2').modal('open');
       }
      
     

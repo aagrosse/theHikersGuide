@@ -1,5 +1,9 @@
 # The Hikers Guide
 
+### Link
+
+[https://aagrosse.github.io/theHikersGuide/] (https://aagrosse.github.io/theHikersGuide/  "The Hikers Guide")
+
 ### Description
 This is a hiker's trail application created using the Hiking Project Data API. This was a collabortive project, and, therefore, a huge learning experience. We went into this project with the intent to create a mobile friendly application that is interactive and includes three Server-Side APIs (OpenWeather Map, LocationIQ, and Hiking Project) and one Third-Party API (bideo.js).  
 
