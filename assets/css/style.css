@@ -122,6 +122,7 @@ input {
     /* margin-bottom: 20px; */
     width: 50%;
     font-size: small;
+    border-radius: 10px;
 }
 
 #geolocation {
