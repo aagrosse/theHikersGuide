@@ -1,26 +1,8 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $(document).ready(function() {
   
 $('#modal1').modal();
 
-
+$('#modal2').modal();
     
     
 $(".btn-floating").on("click", function() {
@@ -45,7 +27,7 @@ $("#search").on("click", function(e){
   $("body").addClass("body");
   $("#restart").attr("style","display:block");
   } else {
-  Materialize.toast('Enter a valid city name. Example: "Chicago". Do not include numbers or special characters.', 3000, 'rounded')
+  $('#modal2').modal('open');
       }
      
     
