@@ -247,3 +247,7 @@ footer{
     display: flow-root;
 
 }
+
+.badge{
+    border-radius: 5px;
+}
