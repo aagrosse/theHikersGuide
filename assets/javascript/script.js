@@ -164,7 +164,7 @@ $.ajax({
         console.log(wetherInfo);
   
            $("#location").html("Location:")
-           $("#icon").html(`<img src='http://openweathermap.org/img/w/${wetherInfo.weather[0].icon}.png'>`);
+           $("#icon").html(`<img src='https://openweathermap.org/img/w/${wetherInfo.weather[0].icon}.png'>`);
            $("#locationName").html(wetherInfo.name);
            $("#tempature").html("Tempature: "+Math.floor(wetherInfo.main.temp)+" &#8457");
            $("#humidity").html("Humidity: "+JSON.stringify(wetherInfo.main.humidity)+"%");
@@ -177,7 +177,7 @@ $.ajax({
     }
 
    function getWeather(city){
-      var urlBaseCityName = "http://api.openweathermap.org/data/2.5/weather?appid=b650042e3a82aa70290734a60a8cb3e3&q="+city+"&units=imperial";
+      var urlBaseCityName = "https://api.openweathermap.org/data/2.5/weather?appid=b650042e3a82aa70290734a60a8cb3e3&q="+city+"&units=imperial";
       console.log("success link00",urlBaseCityName);
       $(".sidepanel").attr("style","display:block");
       $("#sidepanel").delay(800).fadeIn();
@@ -187,7 +187,7 @@ $.ajax({
         success:function(cityWeatherInfo){
     
              $("#location").html("Location:");
-             $("#icon").html(`<img src='http://openweathermap.org/img/w/${cityWeatherInfo.weather[0].icon}.png'>`);
+             $("#icon").html(`<img src='https://openweathermap.org/img/w/${cityWeatherInfo.weather[0].icon}.png'>`);
              $("#locationName").html(cityWeatherInfo.name);
              $("#tempature").html("Tempature: "+Math.floor(cityWeatherInfo.main.temp)+" &#8457");
              $("#humidity").html("Humidity: "+JSON.stringify(cityWeatherInfo.main.humidity)+"%");
