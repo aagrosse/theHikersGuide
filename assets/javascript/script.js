@@ -1,26 +1,8 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $(document).ready(function() {
   
 $('#modal1').modal();
 
-
+$('#modal2').modal();
     
     
 $(".btn-floating").on("click", function() {
@@ -45,7 +27,7 @@ $("#search").on("click", function(e){
   $("body").addClass("body");
   $("#restart").attr("style","display:block");
   } else {
-  Materialize.toast('Enter a valid city name. Example: "Chicago". Do not include numbers or special characters.', 3000, 'rounded')
+  $('#modal2').modal('open');
       }
      
     
@@ -82,69 +64,40 @@ $("#search").on("click", function(e){
     });
   
   
-
-
-function geoCode (city) {
-        var geoKey = "f51b969f42a69a";
-        var geoURL = "https://us1.locationiq.com/v1/search.php?key=" + geoKey +"&q=" + city + "&format=json";
-        $.ajax({
-          url: geoURL,
-          method: "GET"
-      }).then(function(response) {
-          console.log(response);
-          lat = response[0].lat;
-          lon = response[0].lon;
-          getTrails (lat, lon);
-          getUV (lat, lon);
-          console.log("hello")
-        });
+    function geoCode (city) {
+      var geoKey = "f51b969f42a69a";
+      var geoURL = "https://us1.locationiq.com/v1/search.php?key=" + geoKey +"&q=" + city + "&format=json";
+      $.ajax({
+        url: geoURL,
+        method: "GET",
+        statusCode: {
+           
+      404: function() {
+        console.log("heeeeeeeey")
+        $('#modal2').modal('open');
+        $('#hidevid').show();
+        $('#userEntry').show();
+        $('#form').show();
+        $('.sidepanel').hide();
+        $("#restart").attr("style","display:none");
+        $(".row").attr("style", "display:none");
+        document.getElementById('form').value = ''; 
+      },
+    
+      200: function(response) {
+        console.log(response);
+        lat = response[0].lat;
+        lon = response[0].lon;
+        getTrails (lat, lon);
+        getUV (lat, lon);
+        console.log("hello")
       }
-
-
-// Remove elements with hide
-    function pageLoad() {
-            $(".row").hide();
+    
         }
+      });
+    }
 
-// This code will show the results once the user inputs a city
-    // function showResults() {
-        // let $("#close").hidden = false;
-// }
-
-   // Remove elements with hide
-    // 
-    // document.getElementById("cardResults").hidden = true;
-    // resultCard.classList.remove("hide");
-    // searchBtn.classList.remove("hide");
-    // userEntry.s
-    
-function getTrails (lat, lon) {
-        var trailKey = "200668995-d0d69e4094ff3a415bc5f83a7340a09a";
-        var dist = 10;
-        var res = 16;
-        var trailQueryURL = "https://www.hikingproject.com/data/get-trails?lat=" + lat + "&lon=" + lon + "&maxDistance=" + dist + "&maxResults=" + res + "&key=" + trailKey;
-     
-    // console.log(trailQueryURL)
-    
-    $.ajax({
-            url: trailQueryURL,
-            method: "GET"
-        }).then(function(response) {
-            console.log(response);
-
-        for (var i = 0; i < 16; i++){
-            $(".card-title-" + i).text(response.trails[i].name)
-            var ident = (response.trails[i].id);
-            $("#btn-" + i).attr("d",ident);
-            if ((response.trails[i].imgMedium) === ""){
-              $("#image-" + i).attr("src", "https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-            }else{
-              $("#image-" + i).attr("src", response.trails[i].imgMedium);
-            };
-
-        } 
-     });
-}
+ 
 
 
 function getModal (trailId) {
@@ -211,7 +164,7 @@ $.ajax({
         console.log(wetherInfo);
   
            $("#location").html("Location:")
-           $("#icon").html(`<img src='http://openweathermap.org/img/w/${wetherInfo.weather[0].icon}.png'>`);
+           $("#icon").html(`<img src='https://openweathermap.org/img/w/${wetherInfo.weather[0].icon}.png'>`);
            $("#locationName").html(wetherInfo.name);
            $("#tempature").html("Tempature: "+Math.floor(wetherInfo.main.temp)+" &#8457");
            $("#humidity").html("Humidity: "+JSON.stringify(wetherInfo.main.humidity)+"%");
@@ -224,7 +177,7 @@ $.ajax({
     }
 
    function getWeather(city){
-      var urlBaseCityName = "http://api.openweathermap.org/data/2.5/weather?appid=b650042e3a82aa70290734a60a8cb3e3&q="+city+"&units=imperial";
+      var urlBaseCityName = "https://api.openweathermap.org/data/2.5/weather?appid=b650042e3a82aa70290734a60a8cb3e3&q="+city+"&units=imperial";
       console.log("success link00",urlBaseCityName);
       $(".sidepanel").attr("style","display:block");
       $("#sidepanel").delay(800).fadeIn();
@@ -234,7 +187,7 @@ $.ajax({
         success:function(cityWeatherInfo){
     
              $("#location").html("Location:");
-             $("#icon").html(`<img src='http://openweathermap.org/img/w/${cityWeatherInfo.weather[0].icon}.png'>`);
+             $("#icon").html(`<img src='https://openweathermap.org/img/w/${cityWeatherInfo.weather[0].icon}.png'>`);
              $("#locationName").html(cityWeatherInfo.name);
              $("#tempature").html("Tempature: "+Math.floor(cityWeatherInfo.main.temp)+" &#8457");
              $("#humidity").html("Humidity: "+JSON.stringify(cityWeatherInfo.main.humidity)+"%");
@@ -282,24 +235,7 @@ $.ajax({
             document.getElementById('form').value = '';
            })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
+     
           });  
 
             // restart the page for another search
@@ -310,11 +246,52 @@ $.ajax({
             $('#form').show();
             $(".row").attr("style", "display:none");
             
-
-
-
-
-
            })
 
      
+           function getTrails (lat, lon) {
+            var trailKey = "200668995-d0d69e4094ff3a415bc5f83a7340a09a";
+            var dist = 10;
+            var res = 16;
+            var trailQueryURL = "https://www.hikingproject.com/data/get-trails?lat=" + lat + "&lon=" + lon + "&maxDistance=" + dist + "&maxResults=" + res + "&key=" + trailKey;
+         
+        // console.log(trailQueryURL)
+        
+        $.ajax({
+                url: trailQueryURL,
+                method: "GET",
+                statusCode: {
+              
+                  404: function() {
+                    console.log("heeeeeeeey")
+                    $('#modal2').modal('open');
+                    $('#hidevid').show();
+                    $('#userEntry').show();
+                    $('#form').show();
+                    $('.sidepanel').hide();
+                    $("#restart").attr("style","display:none");
+                    $(".row").attr("style", "display:none");
+                    document.getElementById('form').value = ''; 
+                  },
+                  
+                  
+                  200: function(response) {
+    
+                for (var i = 0; i < 16; i++){
+                $(".card-title-" + i).text(response.trails[i].name)
+                var ident = (response.trails[i].id);
+                $("#btn-" + i).attr("d",ident);
+                if ((response.trails[i].imgMedium) === ""){
+                  $("#image-" + i).attr("src", "https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+                }else{
+                  $("#image-" + i).attr("src", response.trails[i].imgMedium);
+                }
+    
+            } 
+          }
+        }
+      });
+    }
+
+
+    

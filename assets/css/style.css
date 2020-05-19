@@ -39,7 +39,7 @@
 .sidepanel {
     width: 200px;
     height: 360px;
-    /* margin-top: 50px; */
+    margin-top: 28px;
     /* margin-left: 100px; */
     background-color:gray;
     float: left;
@@ -47,6 +47,7 @@
     box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 1px rgba(0, 0, 0, 0.19);
     padding: 15px;
     border-radius: 10px;
+    
     line-height: 3.0;
     
 }
@@ -122,6 +123,7 @@ input {
     /* margin-bottom: 20px; */
     width: 50%;
     font-size: small;
+    border-radius: 10px;
 }
 
 #geolocation {
@@ -245,4 +247,8 @@ footer{
 
     display: flow-root;
 
+}
+
+.badge{
+    border-radius: 5px;
 }
